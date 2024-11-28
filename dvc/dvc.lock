@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  download_raw_data:
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+      -O ./data/raw_data.csv
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+      hash: md5
+      checksum: '309537880734692826012589254825020078659'
+    outs:
+    - path: ./data/raw_data.csv
+      hash: md5
+      md5: 3e584720e6718d28509f86f05b7885a1
+      size: 10782

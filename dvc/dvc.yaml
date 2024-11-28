@@ -1,0 +1,8 @@
+stages:
+  download_raw_data:
+    wdir: ..
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data -O ./data/raw_data.csv
+    deps:
+      - https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+    outs:
+      - ./data/raw_data.csv
