@@ -2,6 +2,10 @@
 name = "data-to-slides-with-dvc"
 version = "0.1.0"
 description = "From raw data to management slides with DVC"
+authors = [{ name = "Stanislav Khrapov", email = "khrapovs@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
+
+[dependency-groups]
+dev = ["pre-commit>=4.0.1"]
