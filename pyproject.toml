@@ -9,3 +9,31 @@ dependencies = []
 
 [dependency-groups]
 dev = ["pre-commit>=4.0.1"]
+
+[project.urls]
+Source = "https://github.com/khrapovs/data-to-slides-with-dvc"
+
+[tool.ruff]
+line-length = 120
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "D", "B", "I", "ARG"]
+ignore = [
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "D104",
+  "D105",
+  "D106",
+  "D107",
+  "D213",
+  "D417",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
