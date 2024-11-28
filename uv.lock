@@ -22,7 +22,7 @@ wheels = [
 [[package]]
 name = "data-to-slides-with-dvc"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 
 [package.dev-dependencies]
 dev = [
