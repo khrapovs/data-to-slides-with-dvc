@@ -1,0 +1,7 @@
+[project]
+name = "data-to-slides-with-dvc"
+version = "0.1.0"
+description = "From raw data to management slides with DVC"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
