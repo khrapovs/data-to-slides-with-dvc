@@ -1,0 +1,46 @@
+[project]
+name = "data-to-slides-with-dvc"
+version = "0.1.0"
+description = "From raw data to management slides with DVC"
+authors = [{ name = "Stanislav Khrapov", email = "khrapovs@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = ["pre-commit>=4.0.1", "pytest>=8.3.3"]
+
+[project.urls]
+Source = "https://github.com/khrapovs/data-to-slides-with-dvc"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+
+[tool.ruff]
+line-length = 120
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "D", "B", "I", "ARG"]
+ignore = [
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "D104",
+  "D105",
+  "D106",
+  "D107",
+  "D213",
+  "D417",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
