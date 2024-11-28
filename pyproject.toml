@@ -5,7 +5,7 @@ description = "From raw data to management slides with DVC"
 authors = [{ name = "Stanislav Khrapov", email = "khrapovs@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["polars>=1.15.0"]
 
 [dependency-groups]
 dev = ["pre-commit>=4.0.1", "pytest>=8.3.3"]
