@@ -13,6 +13,9 @@ dev = ["pre-commit>=4.0.1", "pytest>=8.3.3"]
 [project.urls]
 Source = "https://github.com/khrapovs/data-to-slides-with-dvc"
 
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+
 [tool.ruff]
 line-length = 120
 src = ["src", "tests"]
