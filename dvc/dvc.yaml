@@ -22,3 +22,5 @@ stages:
     deps:
       - ./dvc/train_model.py
       - ./data/transformed_data.parquet
+    outs:
+      - ./data/model.joblib
