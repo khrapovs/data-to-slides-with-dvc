@@ -46,8 +46,8 @@ stages:
       size: 4984
   slides:
     cmd:
-    - "jupyter nbconvert ./dvc/slides.ipynb \\\n  --to slides --no-prompt --execute
-      --TagRemovePreprocessor.remove_input_tags \"hide-input\""
+    - "jupyter nbconvert ./dvc/slides.ipynb \\\n  --output-dir ./data \\\n  --to slides
+      --no-prompt --execute \\\n  --TagRemovePreprocessor.remove_input_tags \"hide-input\""
     deps:
     - path: ./data/model.joblib
       hash: md5
@@ -62,7 +62,7 @@ stages:
       md5: 9ad1b5e4c926a4e601fdec5f76f0d5ec
       size: 2734
     outs:
-    - path: ./dvc/slides.slides.html
+    - path: ./data/slides.slides.html
       hash: md5
       md5: a5ed9c03b90c5388d82abecab925f5a4
       size: 290363

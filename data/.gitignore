@@ -1,3 +1,4 @@
 /raw_data.csv
 /transformed_data.parquet
 /model.joblib
+/slides.slides.html
