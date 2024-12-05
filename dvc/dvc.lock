@@ -19,8 +19,23 @@ stages:
       hash: md5
       md5: 3e584720e6718d28509f86f05b7885a1
       size: 10782
+    - path: ./dvc/transform_data.py
+      hash: md5
+      md5: 503bdc98f046d4ddbd8c8bdb72330f6f
+      size: 967
     outs:
     - path: ./data/transformed_data.parquet
       hash: md5
       md5: e9d1d7795a17fa434ee8e7bb1e57c346
       size: 11434
+  train_model:
+    cmd: python dvc/train_model.py
+    deps:
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
+    - path: ./dvc/train_model.py
+      hash: md5
+      md5: 64139eec94befe4067ad635170f8ae24
+      size: 748

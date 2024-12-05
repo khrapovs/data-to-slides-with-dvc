@@ -15,3 +15,10 @@ stages:
       - ./data/raw_data.csv
     outs:
       - ./data/transformed_data.parquet
+
+  train_model:
+    wdir: ..
+    cmd: python dvc/train_model.py
+    deps:
+      - ./dvc/train_model.py
+      - ./data/transformed_data.parquet
