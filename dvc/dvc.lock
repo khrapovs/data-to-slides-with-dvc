@@ -42,7 +42,7 @@ stages:
     outs:
     - path: ./data/model.joblib
       hash: md5
-      md5: 897cf8b49312e9327a887743bc451e05
+      md5: 48d6f571d448932960b92ff6735e2aa5
       size: 4984
   slides:
     cmd:
@@ -51,7 +51,7 @@ stages:
     deps:
     - path: ./data/model.joblib
       hash: md5
-      md5: 897cf8b49312e9327a887743bc451e05
+      md5: 48d6f571d448932960b92ff6735e2aa5
       size: 4984
     - path: ./data/transformed_data.parquet
       hash: md5
