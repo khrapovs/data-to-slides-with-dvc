@@ -42,5 +42,27 @@ stages:
     outs:
     - path: ./data/model.joblib
       hash: md5
-      md5: aab22e724e1fa7a061a78c6305cab9d1
+      md5: 6a2accef3acb3b96ee9d74023df3193a
       size: 4984
+  slides:
+    cmd:
+    - "jupyter nbconvert ./dvc/slides.ipynb \\\n  --to slides --no-prompt --execute
+      --TagRemovePreprocessor.remove_input_tags \"hide-input\""
+    deps:
+    - path: ./data/model.joblib
+      hash: md5
+      md5: 6a2accef3acb3b96ee9d74023df3193a
+      size: 4984
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
+    - path: ./dvc/slides.ipynb
+      hash: md5
+      md5: f601554e0fb86170fd885e2c2fc53543
+      size: 23650
+    outs:
+    - path: ./dvc/slides.slides.html
+      hash: md5
+      md5: a5ed9c03b90c5388d82abecab925f5a4
+      size: 290363

@@ -24,3 +24,16 @@ stages:
       - ./data/transformed_data.parquet
     outs:
       - ./data/model.joblib
+
+  slides:
+    cmd:
+      - >-
+        jupyter nbconvert ./dvc/slides.ipynb \
+          --to slides --no-prompt --execute --TagRemovePreprocessor.remove_input_tags "hide-input"
+    wdir: ..
+    deps:
+      - ./dvc/slides.ipynb
+      - ./data/transformed_data.parquet
+      - ./data/model.joblib
+    outs:
+      - ./dvc/slides.slides.html
