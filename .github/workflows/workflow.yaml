@@ -30,6 +30,6 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Install dependencies
-        run: uv sync --all-extras --group dev
+        run: uv sync --all-extras
       - name: Run pre-commit
         run: uv run pre-commit run -v --show-diff-on-failure
