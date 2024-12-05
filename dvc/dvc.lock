@@ -12,3 +12,15 @@ stages:
       hash: md5
       md5: 3e584720e6718d28509f86f05b7885a1
       size: 10782
+  transform_data:
+    cmd: python dvc/transform_data.py
+    deps:
+    - path: ./data/raw_data.csv
+      hash: md5
+      md5: 3e584720e6718d28509f86f05b7885a1
+      size: 10782
+    outs:
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
