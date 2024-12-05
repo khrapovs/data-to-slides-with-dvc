@@ -18,6 +18,7 @@ Run DVC pipeline:
 ```shell
 dvc repro -R dvc
 ```
+Open resulting html slides in `data` folder.
 
 ## Contribute
 
