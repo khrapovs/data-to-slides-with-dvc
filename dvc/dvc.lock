@@ -42,7 +42,7 @@ stages:
     outs:
     - path: ./data/model.joblib
       hash: md5
-      md5: 6a2accef3acb3b96ee9d74023df3193a
+      md5: 897cf8b49312e9327a887743bc451e05
       size: 4984
   slides:
     cmd:
@@ -51,7 +51,7 @@ stages:
     deps:
     - path: ./data/model.joblib
       hash: md5
-      md5: 6a2accef3acb3b96ee9d74023df3193a
+      md5: 897cf8b49312e9327a887743bc451e05
       size: 4984
     - path: ./data/transformed_data.parquet
       hash: md5
@@ -59,8 +59,8 @@ stages:
       size: 11434
     - path: ./dvc/slides.ipynb
       hash: md5
-      md5: f601554e0fb86170fd885e2c2fc53543
-      size: 23650
+      md5: 9ad1b5e4c926a4e601fdec5f76f0d5ec
+      size: 2734
     outs:
     - path: ./dvc/slides.slides.html
       hash: md5
