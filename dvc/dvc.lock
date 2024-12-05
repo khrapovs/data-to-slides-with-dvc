@@ -1,0 +1,68 @@
+schema: '2.0'
+stages:
+  download_raw_data:
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+      -O ./data/raw_data.csv
+    deps:
+    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+      hash: md5
+      checksum: '309537880734692826012589254825020078659'
+    outs:
+    - path: ./data/raw_data.csv
+      hash: md5
+      md5: 3e584720e6718d28509f86f05b7885a1
+      size: 10782
+  transform_data:
+    cmd: python dvc/transform_data.py
+    deps:
+    - path: ./data/raw_data.csv
+      hash: md5
+      md5: 3e584720e6718d28509f86f05b7885a1
+      size: 10782
+    - path: ./dvc/transform_data.py
+      hash: md5
+      md5: 3a2efe345377320048701e5dcc230f04
+      size: 967
+    outs:
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
+  train_model:
+    cmd: python dvc/train_model.py
+    deps:
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
+    - path: ./dvc/train_model.py
+      hash: md5
+      md5: b9ec1892d8c3c0f9bd1c7703b65b839c
+      size: 889
+    outs:
+    - path: ./data/model.joblib
+      hash: md5
+      md5: 48d6f571d448932960b92ff6735e2aa5
+      size: 4984
+  slides:
+    cmd:
+    - "jupyter nbconvert ./dvc/slides.ipynb \\\n  --output-dir ./data \\\n  --to slides
+      --no-prompt --execute \\\n  --TagRemovePreprocessor.remove_input_tags \"hide-input\""
+    deps:
+    - path: ./data/model.joblib
+      hash: md5
+      md5: 48d6f571d448932960b92ff6735e2aa5
+      size: 4984
+    - path: ./data/transformed_data.parquet
+      hash: md5
+      md5: e9d1d7795a17fa434ee8e7bb1e57c346
+      size: 11434
+    - path: ./dvc/slides.ipynb
+      hash: md5
+      md5: 9ad1b5e4c926a4e601fdec5f76f0d5ec
+      size: 2734
+    outs:
+    - path: ./data/slides.slides.html
+      hash: md5
+      md5: a5ed9c03b90c5388d82abecab925f5a4
+      size: 290363

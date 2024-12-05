@@ -1,0 +1,41 @@
+stages:
+  download_raw_data:
+    wdir: ..
+    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data -O ./data/raw_data.csv
+    deps:
+      - https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+    outs:
+      - ./data/raw_data.csv
+
+  transform_data:
+    wdir: ..
+    cmd: python dvc/transform_data.py
+    deps:
+      - ./dvc/transform_data.py
+      - ./data/raw_data.csv
+    outs:
+      - ./data/transformed_data.parquet
+
+  train_model:
+    wdir: ..
+    cmd: python dvc/train_model.py
+    deps:
+      - ./dvc/train_model.py
+      - ./data/transformed_data.parquet
+    outs:
+      - ./data/model.joblib
+
+  slides:
+    cmd:
+      - >-
+        jupyter nbconvert ./dvc/slides.ipynb \
+          --output-dir ./data \
+          --to slides --no-prompt --execute \
+          --TagRemovePreprocessor.remove_input_tags "hide-input"
+    wdir: ..
+    deps:
+      - ./dvc/slides.ipynb
+      - ./data/transformed_data.parquet
+      - ./data/model.joblib
+    outs:
+      - ./data/slides.slides.html
