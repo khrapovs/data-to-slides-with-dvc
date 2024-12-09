@@ -6,7 +6,9 @@
 
 ## Usage
 
-Create virtual environment:
+It is recommended to work with this repository using project management tool [`uv`](https://github.com/astral-sh/uv). Another required system dependency is [`wget`](https://www.gnu.org/software/wget/). Please, read the respective documentation websites for platform dependent installation instructions.
+
+After installing `uv`, create virtual environment:
 
 ```shell
 uv venv
