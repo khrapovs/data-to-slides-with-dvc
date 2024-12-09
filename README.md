@@ -91,6 +91,8 @@ The next step also runs a [python script](https://github.com/khrapovs/data-to-sl
 
 The final step runs `jupyter nbconvert` command with [Jupyter notebook](https://github.com/khrapovs/data-to-slides-with-dvc/blob/main/dvc/slides.ipynb) as an input. This notebook has cells marked with special tags such as "Slide", "Sub-Slide", and "Fragment". Cells with those markings are then converted into corresponding slide elements with visually appealing smooth transitions. The output of this step is a single html file which is also versioned with DVC. I am using those slides routinely to show model performance analysis and the underlying research that leads to decisions such as algorithm or feature selection. For the sake of brevity of presentation I have only created two simple slides, one title and one containing visualization of the confusion matrix on the hold-out data set.
 
+![Slides](./slides.gif)
+
 ### Why This Matters for Communication
 
 The final step is crucial. Data science teams often focus so heavily on data wrangling that they neglect presenting their results in a “management-friendly” format. This task typically falls to roles like product owners or business consultants, who spend significant time converting raw outputs into polished presentations. Writing slides directly in Jupyter notebooks empowers data scientists to present their findings in a clear, visually appealing format and maintain short communication loops with stakeholders.
