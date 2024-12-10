@@ -59,10 +59,10 @@ stages:
       size: 11434
     - path: ./dvc/slides.ipynb
       hash: md5
-      md5: 9ad1b5e4c926a4e601fdec5f76f0d5ec
-      size: 2734
+      md5: fd4b69f955b3746e47ee482eaaa0ed47
+      size: 2790
     outs:
     - path: ./data/slides.slides.html
       hash: md5
-      md5: a5ed9c03b90c5388d82abecab925f5a4
-      size: 290363
+      md5: 9f2843d9877c17332cb15857440ef692
+      size: 295119
