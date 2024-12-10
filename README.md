@@ -60,9 +60,7 @@ In any data science project, ensuring reproducibility and traceability is critic
 
 Versioning goes beyond just tracking code. It encompasses managing data transformations, model parameters, and experiment outputs in a systematic way. By using tools like DVC, teams can ensure that every step of the pipeline is reproducible and well-documented. This not only supports collaboration within the team but also builds trust with stakeholders, who gain a transparent record of how insights and models were derived. Versioning is not just about keeping things tidy - it is about ensuring the reliability and accountability of your entire data science workflow.
 
-### Automating Communication: Slides as a Pipeline step
-
-As a bonus, presentation slides - an unavoidable communication medium in corporate environments - can also be automatically generated and versioned alongside data and model updates. While this may seem excessive at first glance, I have found it to be a significant time saver for streamlined and effortless communication, especially with non-technical stakeholders.
+Presentation slides - an unavoidable communication medium in corporate environments - can also be automatically generated and versioned alongside data and model updates. While this may seem excessive at first glance, this step is actually crucial. I have found it to be a significant time saver for streamlined and effortless communication, especially with non-technical stakeholders. Data science teams often focus so heavily on data wrangling that they neglect presenting their results in a “management-friendly” format. This task typically falls to roles like product owners or business consultants, who spend significant time converting raw outputs into polished presentations. Writing slides directly in Jupyter notebooks empowers data scientists to present their findings in a clear, visually appealing format and maintain short communication loops with stakeholders.
 
 ### A Toy Example: Wine Dataset to Executive slides
 
@@ -93,9 +91,7 @@ The final step runs `jupyter nbconvert` command with [Jupyter notebook](https://
 
 ![Slides](./slides.gif)
 
-### Why This Matters for Communication
-
-The final step is crucial. Data science teams often focus so heavily on data wrangling that they neglect presenting their results in a “management-friendly” format. This task typically falls to roles like product owners or business consultants, who spend significant time converting raw outputs into polished presentations. Writing slides directly in Jupyter notebooks empowers data scientists to present their findings in a clear, visually appealing format and maintain short communication loops with stakeholders.
+### Call to Action
 
 If you have ever struggled to maintain order in your data science workflows or found yourself repeatedly recreating results, now is the time to give tools like DVC a try. Start small, and soon you will find your workflows not only more organized but also far more impactful. Check out the repository linked above to explore this example and see how a streamlined, automated approach can transform the way you communicate your data science results.
 
