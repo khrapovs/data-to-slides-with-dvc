@@ -52,7 +52,7 @@ pre-commit install
 
 A long time ago, when I was conducting research at university, I had to write numerous papers and prepare conference presentation slides. These were often packed with graphics, tables, and formulas. All the presentation materials came from multiple stages of data collection, transformation, and visualization. Back then, 10–15 years ago, academic research - at least in my field of economics and finance - had not yet fully embraced advancements in the IT sphere. Journals were still accepting manuscripts without requiring any supporting materials, such as versioned code or data. Needless to say, tools like Git sounded like foreign jargon. Nevertheless, for my own sanity, I did my best to maintain order in my workflow, minimizing unnecessary manual steps from raw data to a journal submission or conference presentation.
 
-After transitioning to a career as a data scientist in the private sector, I quickly realized just how much I had missed in terms of tooling that could have simplified my life as a university researcher. Git is now an indisputable prerequisite for data scientists at any level. Data pipelining and the automation of machine learning experiments have become essential for achieving efficiency, speed, and reproducibility. Discovering the [Data Version Control (DVC)](https://dvc.org/) Python library marked the completion of my journey to versioning everything — from data and machine learning artifacts like trained models to communication media such as presentation slides for project stakeholders. In this blog post, I will demonstrate a toy example of how I organize and version a data and machine learning workflow, starting from a remote data source and ending with polished executive slides - all in a single terminal command!
+After transitioning to a career as a data scientist in the private sector, I quickly realized just how much I had missed in terms of tooling that could have simplified my life as a university researcher. Git is now an indisputable prerequisite for data scientists at any level. Data pipelining and the automation of machine learning experiments have become essential for achieving efficiency, speed, and reproducibility. Discovering the [Data Version Control (DVC)](https://dvc.org/) Python library marked the completion of my journey to versioning everything - from data and machine learning artifacts like trained models to communication media such as presentation slides for project stakeholders. In this blog post, I will demonstrate a toy example of how I organize and version a data and machine learning workflow, starting from a remote data source and ending with polished executive slides - all in a single terminal command!
 
 ### Why Versioning Matters in Data Science
 
@@ -62,7 +62,7 @@ Versioning goes beyond just tracking code. It encompasses managing data transfor
 
 ### Automating Communication: Slides as a Pipeline step
 
-As a bonus, presentation slides—an unavoidable communication medium in corporate environments - can also be automatically generated and versioned alongside data and model updates. While this may seem excessive at first glance, I have found it to be a significant time saver for streamlined and effortless communication, especially with non-technical stakeholders.
+As a bonus, presentation slides - an unavoidable communication medium in corporate environments - can also be automatically generated and versioned alongside data and model updates. While this may seem excessive at first glance, I have found it to be a significant time saver for streamlined and effortless communication, especially with non-technical stakeholders.
 
 ### A Toy Example: Wine Dataset to Executive slides
 
@@ -97,7 +97,7 @@ The final step runs `jupyter nbconvert` command with [Jupyter notebook](https://
 
 The final step is crucial. Data science teams often focus so heavily on data wrangling that they neglect presenting their results in a “management-friendly” format. This task typically falls to roles like product owners or business consultants, who spend significant time converting raw outputs into polished presentations. Writing slides directly in Jupyter notebooks empowers data scientists to present their findings in a clear, visually appealing format and maintain short communication loops with stakeholders.
 
-If you have ever struggled to maintain order in your data science workflows or found yourself repeatedly recreating results, now is the time to give tools like DVC a try. Start small, and soon you’ll find your workflows not only more organized but also far more impactful. Check out the repository linked above to explore this example and see how a streamlined, automated approach can transform the way you communicate your data science results.
+If you have ever struggled to maintain order in your data science workflows or found yourself repeatedly recreating results, now is the time to give tools like DVC a try. Start small, and soon you will find your workflows not only more organized but also far more impactful. Check out the repository linked above to explore this example and see how a streamlined, automated approach can transform the way you communicate your data science results.
 
 ### References
 
