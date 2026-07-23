@@ -39,13 +39,13 @@ uv venv
 Install dependencies:
 
 ```shell
-uv sync --all-extras
+uv sync
 ```
 
 Install pre-commit:
 
 ```shell
-pre-commit install
+prek install
 ```
 
 ## Blog Post
