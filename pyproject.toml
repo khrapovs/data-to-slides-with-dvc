@@ -11,20 +11,19 @@ dependencies = [
   "loguru>=0.7.2",
   "matplotlib>=3.9.3",
   "polars>=1.15.0",
+  "prek>=0.4.10",
   "scikit-learn>=1.5.2",
 ]
-
-[project.optional-dependencies]
-dev = ["pre-commit>=4.0.1"]
 
 [project.urls]
 Source = "https://github.com/khrapovs/data-to-slides-with-dvc"
 
 [tool.ruff]
 line-length = 120
+src = ["dvc"]
 
 [tool.ruff.lint]
-select = ["E", "F", "D", "B", "I", "ARG"]
+select = ["E", "F", "D", "B", "I", "ARG", "ANN"]
 ignore = [
   "D100",
   "D101",
@@ -37,9 +36,14 @@ ignore = [
   "D213",
   "D417",
 ]
+preview = true
+extend-select = ["PLR0917"]
 
-[tool.mypy]
-ignore_missing_imports = true
-disallow_untyped_calls = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
+[tool.ruff.lint.pylint]
+max-positional-args = 1
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ty.rules]
+no-matching-overload = "ignore"
