@@ -1,10 +1,12 @@
 schema: '2.0'
 stages:
   download_raw_data:
-    cmd: wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+    cmd: wget
+      https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
       -O ./data/raw_data.csv
     deps:
-    - path: https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+    - path:
+        https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
       hash: md5
       checksum: '309537880734692826012589254825020078659'
     outs:
@@ -26,15 +28,15 @@ stages:
     outs:
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: e9d1d7795a17fa434ee8e7bb1e57c346
-      size: 11434
+      md5: 8571a14803e24a1f6493cd90e5f3b82c
+      size: 11096
   train_model:
     cmd: python dvc/train_model.py
     deps:
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: e9d1d7795a17fa434ee8e7bb1e57c346
-      size: 11434
+      md5: 8571a14803e24a1f6493cd90e5f3b82c
+      size: 11096
     - path: ./dvc/train_model.py
       hash: md5
       md5: b9ec1892d8c3c0f9bd1c7703b65b839c
@@ -42,8 +44,8 @@ stages:
     outs:
     - path: ./data/model.joblib
       hash: md5
-      md5: 48d6f571d448932960b92ff6735e2aa5
-      size: 4984
+      md5: 8e9081be51133a857115b15104dbe1f6
+      size: 4891
   slides:
     cmd:
     - "jupyter nbconvert ./dvc/slides.ipynb \\\n  --output-dir ./data \\\n  --to slides
@@ -51,18 +53,18 @@ stages:
     deps:
     - path: ./data/model.joblib
       hash: md5
-      md5: 48d6f571d448932960b92ff6735e2aa5
-      size: 4984
+      md5: 8e9081be51133a857115b15104dbe1f6
+      size: 4891
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: e9d1d7795a17fa434ee8e7bb1e57c346
-      size: 11434
+      md5: 8571a14803e24a1f6493cd90e5f3b82c
+      size: 11096
     - path: ./dvc/slides.ipynb
       hash: md5
-      md5: fd4b69f955b3746e47ee482eaaa0ed47
-      size: 2790
+      md5: 78da0e74eb3343b00063598f5dd7c95a
+      size: 2615
     outs:
     - path: ./data/slides.slides.html
       hash: md5
-      md5: 9f2843d9877c17332cb15857440ef692
-      size: 295119
+      md5: 3852430b672a431d3fd47dae3eb9394b
+      size: 294985
