@@ -17,7 +17,7 @@ if __name__ == "__main__":
     x_data = transformed_data.select(pl.selectors.exclude("class"))
     y_data = transformed_data.select("class")
 
-    model = Pipeline([("scaler", MinMaxScaler()), ("classifier", DecisionTreeClassifier())])
+    model = Pipeline([("scaler", MinMaxScaler()), ("classifier", DecisionTreeClassifier(random_state=42))])
 
     logger.info("Will train model...")
 
