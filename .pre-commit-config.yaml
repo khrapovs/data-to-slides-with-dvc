@@ -7,13 +7,12 @@ repos:
       - id: forbid-new-submodules
       - id: mixed-line-ending
       - id: check-json
-      - id: pretty-format-json
-        args: ["--autofix"]
       - id: check-yaml
+      - id: check-toml
       - id: detect-private-key
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.8.1
+    rev: v0.15.22
     hooks:
       - id: ruff
         args: [ --config, pyproject.toml, --fix, --exit-non-zero-on-fix ]
@@ -23,6 +22,15 @@ repos:
         types_or: [ python, jupyter ]
 
   - repo: https://github.com/astral-sh/ty-pre-commit
-    rev: v0.0.60
+    rev: v0.0.62
     hooks:
       - id: ty
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+        name: nbstripout
+        entry: nbstripout --keep-metadata-keys="metadata.kernelspec metadata.language_info.codemirror_mode.version metadata.language_info.pygments_lexer metadata.language_info.version"
+        types_or: [python, pyi, jupyter]
+        language: python
