@@ -89,8 +89,6 @@ The next step also runs a [python script](https://github.com/khrapovs/data-to-sl
 
 The final step runs `jupyter nbconvert` command with [Jupyter notebook](https://github.com/khrapovs/data-to-slides-with-dvc/blob/main/dvc/slides.ipynb) as an input. This notebook has cells marked with special tags such as "Slide", "Sub-Slide", and "Fragment". Cells with those markings are then converted into corresponding slide elements with visually appealing smooth transitions. The output of this step is a single html file which is also versioned with DVC. I am using those slides routinely to show model performance analysis and the underlying research that leads to decisions such as algorithm or feature selection. For the sake of brevity of presentation I have only created two simple slides, one title and one containing visualization of the confusion matrix on the hold-out data set.
 
-![Slides](./slides.gif)
-
 ### Call to Action
 
 If you have ever struggled to maintain order in your data science workflows or found yourself repeatedly recreating results, now is the time to give tools like DVC a try. Start small, and soon you will find your workflows not only more organized but also far more impactful. Check out the repository linked above to explore this example and see how a streamlined, automated approach can transform the way you communicate your data science results.
