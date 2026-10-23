@@ -28,15 +28,15 @@ stages:
     outs:
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: 8571a14803e24a1f6493cd90e5f3b82c
-      size: 11096
+      md5: 03210b7a30c20f0c0f388798c0fbce7d
+      size: 11168
   train_model:
     cmd: python dvc/train_model.py
     deps:
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: 8571a14803e24a1f6493cd90e5f3b82c
-      size: 11096
+      md5: 03210b7a30c20f0c0f388798c0fbce7d
+      size: 11168
     - path: ./dvc/train_model.py
       hash: md5
       md5: 81437c656ed07a41b8c8e11e5fb40606
@@ -44,7 +44,7 @@ stages:
     outs:
     - path: ./data/model.joblib
       hash: md5
-      md5: 59e2a51018d25f37678cd45cc097c4c2
+      md5: 4badfb194baff90b589d301a8ed71bae
       size: 4891
   slides:
     cmd:
@@ -53,18 +53,18 @@ stages:
     deps:
     - path: ./data/model.joblib
       hash: md5
-      md5: 59e2a51018d25f37678cd45cc097c4c2
+      md5: 4badfb194baff90b589d301a8ed71bae
       size: 4891
     - path: ./data/transformed_data.parquet
       hash: md5
-      md5: 8571a14803e24a1f6493cd90e5f3b82c
-      size: 11096
+      md5: 03210b7a30c20f0c0f388798c0fbce7d
+      size: 11168
     - path: ./dvc/slides.ipynb
       hash: md5
-      md5: 25433322320c78d3195c4e202c661b86
-      size: 2538
+      md5: dc157353640e8a0b06c4cb5809b986de
+      size: 2523
     outs:
     - path: ./data/slides.slides.html
       hash: md5
-      md5: 69cb82aaa9d7c74753fe42d0b1c0608c
-      size: 298155
+      md5: b2182bcb9831559fc55176a61d9a01b1
+      size: 298140
